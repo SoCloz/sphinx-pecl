@@ -1810,7 +1810,7 @@ ZEND_END_ARG_INFO()
 #endif
 
 #if HAVE_3ARG_SPHINX_SET_RANKING_MODE
-ZEND_BEGIN_ARG_INFO_EX(arginfo_sphinxclient_setrankingmode, 0, 0, 2)
+ZEND_BEGIN_ARG_INFO_EX(arginfo_sphinxclient_setrankingmode, 0, 0, 1)
 	ZEND_ARG_INFO(0, ranker)
 	ZEND_ARG_INFO(0, rank_expression)
 ZEND_END_ARG_INFO()
