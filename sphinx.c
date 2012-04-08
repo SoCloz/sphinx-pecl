@@ -766,15 +766,15 @@ static PHP_METHOD(SphinxClient, setMaxQueryTime)
 /* }}} */
 
 #ifdef HAVE_3ARG_SPHINX_SET_RANKING_MODE
-/* {{{ proto bool SphinxClient::setRankingMode(int ranker, string ranking_expression) */
+/* {{{ proto bool SphinxClient::setRankingMode(int ranker[, string ranking_expression]) */
 static PHP_METHOD(SphinxClient, setRankingMode)
 {
 	php_sphinx_client *c;
 	long ranker;
 	int res, rank_expr_len;
-	char *rank_expr;
+	char *rank_expr = NULL;
 
-	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "ls", &ranker, &rank_expr, &rank_expr_len) == FAILURE) {
+	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "l|s", &ranker, &rank_expr, &rank_expr_len) == FAILURE) {
 		return;
 	}
 
